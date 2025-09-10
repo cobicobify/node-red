@@ -31,6 +31,9 @@ module.exports = function(grunt) {
         nodemonArgs.push("-u");
         nodemonArgs.push(userDir);
     }
+    // Use local dev settings file for development
+    nodemonArgs.push("-s");
+    nodemonArgs.push("./dev-settings.js");
 
     var browserstack = grunt.option('browserstack');
     if (browserstack) {
